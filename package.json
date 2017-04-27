@@ -1,8 +1,8 @@
 {
-  "name": "babel-plug-import-demand",
+  "name": "babel-plugin-import-demand",
   "version": "0.0.1",
-  "description": "babel plug for import demand",
-  "main": "lib/babel-plug-import-demand.js",
+  "description": "babel plugin for import demand",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
     "prebuild": "npm run lint && npm run clean",
@@ -11,12 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jindada/babel-plug-import-demand.git"
+    "url": "https://github.com/jindada/babel-plugin-import-demand.git"
   },
   "keywords": [
     "babel",
-    "plug",
-    "babel-plug",
+    "plugin",
     "import",
     "demand"
   ],
