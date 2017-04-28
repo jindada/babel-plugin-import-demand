@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-import-demand",
-  "version": "0.0.1",
-  "description": "babel plugin for import demand",
+  "version": "0.0.2",
+  "description": "babel plugin for load project demand",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
