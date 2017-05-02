@@ -65,7 +65,7 @@ For Example:
   {
     "libName": "project",
     "libPath": "dist",   // default: lib
-    "css": true         // default: false
+    "css": true          // default: false
   },
   {
     "libName": "antd",
