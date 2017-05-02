@@ -56,7 +56,23 @@ For Example:
 }
 ```
 
-`options` can be an array (Coming soon...)
+`options` can be an array.
+
+For Example: 
+
+```javascript
+[
+  {
+    "libName": "project",
+    "libPath": "dist",   // default: lib
+    "css": true         // default: false
+  },
+  {
+    "libName": "antd",
+    "libPath": "lib"
+  }
+]
+```
 
 
 ### Note
