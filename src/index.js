@@ -1,7 +1,7 @@
 import assert from 'assert';
 
 const ImportAstPlugin = (t, path, opt) => {
-  const { libName, libPath = 'lib', cssPath } = opt;
+  const { libName, libPath = 'lib', cssPath = undefined } = opt;
   assert(libName, 'libName should be provided in babel-plugin-import-demand');
 
   if (path.node && path.node.source.value === libName) {

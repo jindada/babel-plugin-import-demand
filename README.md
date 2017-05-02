@@ -51,8 +51,8 @@ For Example:
 ```javascript
 {
   "libName": "antd",
-  "libPath": "dist",  // default: lib
-  "css": true,        // default: false
+  "libPath": "dist",       // default: lib
+  "cssPath": "style/css",  // default: undefined
 }
 ```
 
@@ -64,8 +64,8 @@ For Example:
 [
   {
     "libName": "project",
-    "libPath": "dist",   // default: lib
-    "css": true          // default: false
+    "libPath": "dist",       // default: lib
+    "cssPath": "undefined"   // default: undefined
   },
   {
     "libName": "antd",
