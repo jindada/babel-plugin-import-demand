@@ -65,11 +65,11 @@ For Example:
   {
     "libName": "project",
     "libPath": "dist",       // default: lib
-    "cssPath": "undefined"   // default: undefined
   },
   {
     "libName": "antd",
-    "libPath": "lib"
+    "libPath": "lib",
+    "cssPath": "style"
   }
 ]
 ```
