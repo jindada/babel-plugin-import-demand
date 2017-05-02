@@ -19,7 +19,7 @@ const ImportAstPlugin = (t, path, opt) => {
           path.insertBefore(
             t.importDeclaration(
               [],
-              t.stringLiteral(`${libName}/${cssPath}`)
+              t.stringLiteral(`${libName}/${libPath}/${imported.name.toLowerCase()}/${cssPath}`)
             )
           );
         }
