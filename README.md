@@ -3,11 +3,6 @@
 [![NPM version](https://img.shields.io/npm/v/babel-plugin-import-demand.svg?style=flat)](https://npmjs.org/package/babel-plugin-import-demand)
 [![NPM downloads](http://img.shields.io/npm/dm/babel-plugin-import-demand.svg?style=flat)](https://npmjs.org/package/babel-plugin-import-demand)
 
-
-## Why babel-plugin-import-demand
-
- Load project on demand
-
 ## Example
 
 Converts
