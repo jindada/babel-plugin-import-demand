@@ -1,118 +1,77 @@
+## babel-plugin-import-demand
 
-## markdown-for-react
+[![NPM version](https://img.shields.io/npm/v/babel-plugin-import-demand.svg?style=flat)](https://npmjs.org/package/babel-plugin-import-demand)
+[![NPM downloads](http://img.shields.io/npm/dm/babel-plugin-import-demand.svg?style=flat)](https://npmjs.org/package/babel-plugin-import-demand)
 
-[![NPM version](https://img.shields.io/npm/v/markdown-for-react.svg?style=flat)](https://npmjs.org/package/markdown-for-react)
-[![NPM downloads](http://img.shields.io/npm/dm/markdown-for-react.svg?style=flat)](https://npmjs.org/package/markdown-for-react)
+## Example
 
-[live demo](https://jindada.github.io/markdown-for-react)
+Converts
 
-> lightweight react component based on [markdown-it](https://github.com/markdown-it/markdown-it), [react-html-parser](https://github.com/wrakky/react-html-parser), [highlight.js](https://github.com/isagalaev/highlight.js)
+```javascript
+import { Button, DatePicker } from 'projectName';
+```
 
-## Usage examples
-``` js
-import React from 'react';
-import { render } from 'react-dom';
-import MarkdownForReact from 'markdown-for-react';
+(roughly) to
 
-const text = `
-# h1 text
-## h2 text
-### h3 text
-#### h4 text
-##### h5 text
-###### \`h6 text\`
-\`\`\`js
-cnsole.log(hello markdown-for-react)
-\`\`\`
-`
+```javascript
+var _button = require('projectName/lib/button');
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div>
-        <MarkdownForReact value={"# qweqwe"} />
-        <MarkdownForReact value={ text } />
-      </div>
-    )
-  }
+var _button2 = _interopRequireDefault(_button);
+
+var _datePicker = require('projectName/lib/date_picker');
+
+var __datePicker2 = _interopRequireDefault(_datePicker);
+```
+
+## Usage
+
+```bash
+npm install babel-plugin-import-demand --save-dev
+```
+
+Via `.babelrc` or babel-loader.
+
+```js
+{
+  "plugins": [["import-demand", options]]
 }
-render(<Example />, document.getElementById('init'));
+```
+
+### options
+
+`options` can be object.
+
+For Example: 
+
+```javascript
+{
+  "libName": "antd",
+  "libPath": "lib",        // default: lib
+  "spell": true,           // default: false
+  "cssPath": "style/css",  // default: undefined
+}
+```
+
+`options` can be an array.
+
+For Example: 
+
+```javascript
+[
+  {
+    "libName": "project",
+    "libPath": "dist",       // default: lib
+  },
+  {
+    "libName": "antd",
+    "libPath": "lib",
+    "spell": true,
+    "cssPath": "style"
+  }
+]
 ```
 
 
-## For Example
+### Note
 
-# h1 text
-## h2 text
-### h3 text
-#### h4 text
-##### h5 text
-###### h6 text
-
-"double quotes" and 'single quotes'
-
-**bold text**
-
-__bold text__
-
-*italic text*
-
-_italic text_
-
-~~Strikethrough~~
-
-> china
->> heilongjiang
->>> harbin
-
-+ China
-  - heilongjiang
-    * harin
-    + daqing
-    - suihua
-+ England
-
-1. react
-2. vue
-3. angular
-1. jquery
-1. css
-
-57. heilongjiang
-1. beijing
-
-    // hello world
-    line 1
-    line 2
-    line 3
-
-## Tables
-
-| lib    |     url     |
-| ------ | ----------- |
-| react  | https://github.com/facebook/react |
-| vuejs  | https://github.com/vuejs/vue |
-| angular| https://github.com/angular/angular |
-
-
-| lib     |     url      |
-| ------: | -----------: |
-| react  | https://github.com/facebook/react |
-| vuejs  | https://github.com/vuejs/vue |
-| angular| https://github.com/angular/angular |
-
-
-[link text](https://github.com/jindada/markdown-for-react)
-
-[link with title](https://github.com/jindada/markdown-for-react "markdown-for-react")
-
-![Minion](https://octodex.github.com/images/minion.png)
-
-![Alt text][id]
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Contributing
-
-You can submit any ideas as [pull requests](https://github.com/jindada/markdown-for-react) or as a [GitLab issue](https://github.com/jindada/markdown-for-react/issues).
+babel-plugin-import-demand will be not working if you add the library in webpack config **vender**
