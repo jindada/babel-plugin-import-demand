@@ -1,9 +1,9 @@
 import assert from 'assert';
 
-const camel2Underline = (_str) => {
+const camel2Dash = (_str) => {
   const str = _str[0].toLowerCase() + _str.substr(1);
-  return str.replace(/([A-Z])/g, function ($1) {
-    return '_' + $1.toLowerCase();
+  return str.replace(/([A-Z])/g, function camel2DashReplace($1) {
+    return '-' + $1.toLowerCase();
   });
 };
 
@@ -19,14 +19,14 @@ const ImportAstPlugin = (t, path, opt) => {
             [ t.importDefaultSpecifier(
                 t.identifier(imported.name)
             )],
-            t.stringLiteral(`${libName}/${libPath}/${spell ? camel2Underline(imported.name) : imported.name.toLowerCase()}`)
+            t.stringLiteral(`${libName}/${libPath}/${spell ? camel2Dash(imported.name) : imported.name.toLowerCase()}`)
           )
         );
         if (cssPath) {
           path.insertBefore(
             t.importDeclaration(
               [],
-              t.stringLiteral(`${libName}/${libPath}/${spell ? camel2Underline(imported.name) : imported.name.toLowerCase()}/${cssPath}`)
+              t.stringLiteral(`${libName}/${libPath}/${spell ? camel2Dash(imported.name) : imported.name.toLowerCase()}/${cssPath}`)
             )
           );
         }

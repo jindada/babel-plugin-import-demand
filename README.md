@@ -20,11 +20,11 @@ var _button2 = _interopRequireDefault(_button);
 
 require('projectName/lib/button/style/css');
 
-var _date_picker = require('projectName/lib/date_picker');
+var _date_picker = require('projectName/lib/date-picker');
 
 var _date_picker2 = _interopRequireDefault(_date_picker);
 
-require('projectName/lib/date_picker/style/css');
+require('projectName/lib/date-picker/style/css');
 ```
 
 ## Usage

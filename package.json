@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-import-demand",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "babel plugin for load project demand",
   "main": "lib/index.js",
   "scripts": {
